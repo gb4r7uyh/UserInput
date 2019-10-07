@@ -1,33 +1,40 @@
-
-/**
- * Write a description of class TestScanner here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.util.*;
 public class TestScanner
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class TestScanner
-     */
-    public TestScanner()
+    public static void main(String[] args)
     {
-        // initialise instance variables
-        x = 0;
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public static void year()
     {
-        // put your code here
-        return x + y;
+        Scanner keyboard = new Scanner(System.in);
+        boolean validinput = false;
+        int year;
+        String confirmation;
+
+        while (!validinput)
+        {
+            System.out.println("Please enter a year");
+            if(!keyboard.hasNextInt())
+            {
+                year = keyboard.nextInt();
+                System.out.println("Is this ok? Type yes to continue, type anything else to exit");
+                confirmation = keyboard.nextLine();
+                if (confirmation.equalsIgnoreCase("yes"))
+                {
+                    validinput = true;
+                }
+                else
+                {
+                    System.out.println("Resetting...");
+                }
+            }
+            else 
+            {
+                System.out.println("Please enter a valid year");
+            }
+
+        }
     }
 }
